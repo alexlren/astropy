@@ -1,4 +1,4 @@
-# astropy
+# estyl
 
 Implementation of a simple blockchain in python
 It can serve as a POC or to test advanced features of my estel project
@@ -6,7 +6,7 @@ It can serve as a POC or to test advanced features of my estel project
 ## Install as a user
 
 ```
-pip install --user astropy
+pip install --user estyl
 ```
 
 ## Development

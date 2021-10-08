@@ -1,7 +1,7 @@
 import hashlib
 import hmac
 
-from astropy.secp256k1.ecc import GROUP_G, ORDER_N, Point
+from estyl.secp256k1.ecc import GROUP_G, ORDER_N, Point
 
 
 class Signature:

@@ -1,4 +1,4 @@
-from astropy.secp256k1.field import Element
+from estyl.secp256k1.field import Element
 
 CURVE_B = Element(7)
 
