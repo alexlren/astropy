@@ -2,12 +2,12 @@ from astropy.secp256k1.field import Element
 
 CURVE_B = Element(7)
 
-INFINITY = Point(Element(0), Element(0), True)
+INFINITY = Point(Element(0), Element(0), True)  # noqa: F821
 
 GROUP_G_X = 0x79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798
 GROUP_G_Y = 0x483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8
 
-GROUP_G = Point(Element(GROUP_G_X), Element(GROUP_G_Y))
+GROUP_G = Point(Element(GROUP_G_X), Element(GROUP_G_Y))  # noqa: F821
 ORDER_N = 0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141
 
 
@@ -38,7 +38,7 @@ class Point:
             return NotImplemented
         return not (rhs == self)
 
-    def __add__(self, rhs: Point) -> Point:
+    def __add__(self, rhs: 'Point') -> 'Point':
         if self.is_infinity():
             return rhs
 
@@ -61,7 +61,7 @@ class Point:
             y3 = s * (self.x - x3) - self.y
         return self.__class__(x3, y3)
 
-    def __rmul__(self, coefficient: int) -> Point:
+    def __rmul__(self, coefficient: int) -> 'Point':
         coef = coefficient
         current = self
         result = INFINITY

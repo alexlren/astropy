@@ -20,28 +20,28 @@ class Element:
             return NotImplemented
         return not (rhs == self)
 
-    def __add__(self, rhs: Element) -> Element:
+    def __add__(self, rhs: 'Element') -> 'Element':
         val = (self.val + rhs.val) % P
         return self.__class__(val)
 
-    def __sub__(self, rhs: Element) -> Element:
+    def __sub__(self, rhs: 'Element') -> 'Element':
         val = (self.val - rhs.val) % P
         return self.__class__(val)
 
-    def __mul__(self, rhs: Element) -> Element:
+    def __mul__(self, rhs: 'Element') -> 'Element':
         val = (self.val * rhs.val) % P
         return self.__class__(val)
 
-    def __pow__(self, exp: int) -> Element:
+    def __pow__(self, exp: int) -> 'Element':
         n = exp % (P - 1)
         val = pow(self.val, n, P)
         return self.__class__(val)
 
-    def __truediv__(self, rhs: Element) -> Element:
+    def __truediv__(self, rhs: 'Element') -> 'Element':
         val = (self.val * pow(rhs.val, P - 2, P)) % P
         return self.__class__(val)
 
-    def __rmul__(self, coef: int) -> Element:
+    def __rmul__(self, coef: int) -> 'Element':
         val = (coef * self.val) % P
         return self.__class__(val)
 

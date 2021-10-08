@@ -49,7 +49,7 @@ class PublicKey:
         self.pub = pub
 
     @classmethod
-    def from_secret(cls, secret: int) -> PublicKey:
+    def from_secret(cls, secret: int) -> 'PublicKey':
         return cls(secret * GROUP_G)
 
     def verify(self, z: int, sig: Signature) -> bool:
